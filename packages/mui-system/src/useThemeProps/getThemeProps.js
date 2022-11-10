@@ -1,3 +1,4 @@
+// import { internal_resolveProps as resolveProps } from '@mui/utils';
 
 function resolveProps(defaultProps, props) {
   const output = { ...props };
@@ -7,8 +8,7 @@ function resolveProps(defaultProps, props) {
       output[propName] = defaultProps[propName];
     } else if (
         propName === 'TransitionProps' &&
-        props.TransitionProps &&
-        defaultProps.TransitionProps
+        props.TransitionProps
       ) {
         output.TransitionProps = { ...defaultProps.TransitionProps, ...props.TransitionProps };
       }
